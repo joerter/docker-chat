@@ -1,7 +1,20 @@
-chat:
-  build: .
-  ports:
-    - "3000:3000"
-  volumes:
-    - .:/home/app/chat
-    - /home/app/chat/node_modules
+version: '2'
+services:
+  db:
+    image: mongo:3.2
+    volumes:
+      - "./.data/db:/data/db"
+    restart: always
+  chat:
+    depends_on:
+      - db
+    build: .
+    links:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/app/chat
+      - /home/app/chat/node_modules
+    environment:
+      MONGO_DB: db:27017
