@@ -1,12 +1,15 @@
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var greeting = require('./greeting');
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
 io.on('connection', function(socket){
+  socket.emit('greeting', greeting());
+
   socket.on('chat message', function(msg){
     io.emit('chat message', msg);
   });
