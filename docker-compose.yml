@@ -2,3 +2,4 @@ chat:
   build: .
   volumes:
     - .:/home/app/chat
+    - /home/app/chat/node_modules
