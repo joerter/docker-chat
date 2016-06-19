@@ -9,4 +9,4 @@ RUN chown -R app:app $HOME/*
 USER app
 WORKDIR $HOME/chat
 RUN npm install
-CMD ["node", "index.js"]
+CMD ["npm", "start"]
