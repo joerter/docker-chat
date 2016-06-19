@@ -1,0 +1,4 @@
+chat:
+  build: .
+  volumes:
+    - .:/home/app/chat
