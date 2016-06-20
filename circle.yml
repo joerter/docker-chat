@@ -5,3 +5,6 @@ dependencies:
   override:
     - docker info
     - docker build -t joerter/docker-chat .
+test:
+  override:
+    - docker run --rm joerter/docker-chat npm test
