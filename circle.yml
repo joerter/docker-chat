@@ -1,0 +1,7 @@
+machine:
+  services:
+    - docker
+dependencies:
+  override:
+    - docker info
+    - docker build -t joerter/docker-chat .
