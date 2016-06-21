@@ -15,3 +15,5 @@ services:
       - "3000:3000"
     environment:
       MONGO_DB: db:27017
+      NODE_ENV: production
+      PORT: 80
