@@ -18,3 +18,5 @@ services:
       - /home/app/chat/node_modules
     environment:
       MONGO_DB: db:27017
+      PORT: 3000
+      NODE_ENV: development
