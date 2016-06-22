@@ -14,8 +14,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/home/app/chat
-      - /home/app/chat/node_modules
+      - .:/app
+      - /app/node_modules
     environment:
       MONGO_DB: db:27017
       PORT: 3000
