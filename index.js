@@ -15,7 +15,7 @@ io.on('connection', function(socket){
     messages.forEach(function (msg) {
       socket.emit('chat message', msg.message);
     });
-    socket.emit('greeting', 'That\'s all for now!');
+    socket.emit('greeting', 'That\'s all!');
   });
 
   socket.on('chat message', function(msg){
